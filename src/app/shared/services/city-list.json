@@ -1,0 +1,49 @@
+{
+    "cities": [
+        {
+            "id": 2759794,
+            "name": "Amsterdam",
+            "country": "NL",
+            "coord": {
+              "lon": 4.88969,
+              "lat": 52.374031
+            }
+        },
+        {
+            "id": 945813,
+            "name": "Utrecht",
+            "country": "ZA",
+            "coord": {
+                "lon": 30.321659,
+                "lat": -27.658621
+            }
+        },
+        {
+            "id": 6359304,
+            "name": "Madrid",
+            "country": "ES",
+            "coord": {
+                "lon": -3.68275,
+                "lat": 40.489349
+            }
+        },
+        {
+            "id": 6455259,
+            "name": "Paris",
+            "country": "FR",
+            "coord": {
+                "lon": 2.35236,
+                "lat": 48.856461
+            }
+        },
+        {
+            "id": 2673730,
+            "name": "Stockholm",
+            "country": "SE",
+            "coord": {
+                "lon": 18.064899,
+                "lat": 59.332581
+            }
+        }
+    ]
+}
