@@ -1,6 +1,7 @@
-<p>
-  home works!
-</p>
+<h1>My featured cities:</h1>
 <ul>
-  <li *ngFor="let city of cities">{{city.name}}</li>
+  <app-city-weather [city]="city"
+                    *ngFor="let city of cities"
+                    (click)="getWeather(city.id)">{{city.name}}
+  </app-city-weather>
 </ul>
