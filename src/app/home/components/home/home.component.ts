@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CitiesService } from 'src/app/shared/services/cities.service';
-import { City } from 'src/app/shared/models/city';
+import { CityWeatherService } from 'src/app/shared/services/city-weather.service';
+import { OpenWeather } from 'src/app/shared/models/open-weather.';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +8,12 @@ import { City } from 'src/app/shared/models/city';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  cities: City[] = [];
+  citiesWeather: OpenWeather[] = [];
 
-  constructor(private citiesService: CitiesService) {
+  constructor(private citiesService: CityWeatherService) {
     citiesService.getCities()
-      .subscribe(city => {
-        const newCity = new City(city.id, city.name, city.country, { lat: city.coord.lat, lon: city.coord.lon });
-        this.cities.push(newCity);
+      .subscribe(({ id, name, main, wind }) => {
+        this.citiesWeather.push(new OpenWeather(id, name, main, wind));
       });
   }
 

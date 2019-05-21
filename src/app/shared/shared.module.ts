@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 
 import { WeatherService } from './services/weather.service';
-import { CitiesService } from './services/cities.service';
+import { CityWeatherService } from './services/city-weather.service'; 
 import { CityWeatherComponent } from './components/city-weather/city-weather.component';
 import { MatCardModule } from '@angular/material/card';
 
@@ -19,7 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     CityWeatherComponent,
   ],
   providers: [
-    CitiesService,
+    CityWeatherService,
     WeatherService,
   ]
 })

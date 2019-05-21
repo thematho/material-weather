@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CitiesService } from './cities.service';
+import { CityWeatherService } from './city-weather.service';
 
 describe('CitiesService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: CitiesService = TestBed.get(CitiesService);
+    const service: CityWeatherService = TestBed.get(CityWeatherService);
     expect(service).toBeTruthy();
   });
 });

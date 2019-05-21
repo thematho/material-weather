@@ -1,5 +1,5 @@
 export class Wind {
-    privatespeed: number;
-    privatedeg: number;
+    public speed: number;
+    public deg: number;
     constructor() { }
 }

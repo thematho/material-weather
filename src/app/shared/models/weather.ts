@@ -1,9 +1,8 @@
 import { Wind } from './wind';
 
 export class Weather {
-    private temp: number;
-    private temp_min: number;
-    private temp_max: number;
-    private wind:  Wind;
+    public temp: number;
+    public temp_min: number;
+    public temp_max: number;
     constructor() { }
 }
