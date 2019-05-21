@@ -1,5 +1,11 @@
+@import '~@angular/material/theming';
+
 :host {
     mat-toolbar {
+        @include mat-elevation(6);
+        position: sticky;
+        top: 0;
+        z-index: 1;
         text-align: center;
     }
 }
