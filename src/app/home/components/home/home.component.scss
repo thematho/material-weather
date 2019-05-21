@@ -1,0 +1,29 @@
+@import '../../../shared//styles//media';
+
+:host {
+    h1 {
+        text-align: center;
+    }
+
+    .city-list {
+        max-width: 500px;
+        margin: auto;
+        padding: 0;
+
+        >app-city-weather {
+            margin: 1rem;
+        }
+    }
+}
+
+@media #{$mat-xs} {
+    :host {
+        h1 {
+            display: none;
+        }
+
+        .city-list {
+            max-width: initial;
+        }
+    }
+}

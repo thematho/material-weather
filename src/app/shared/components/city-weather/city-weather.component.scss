@@ -1,0 +1,13 @@
+:host {
+    display: block;
+
+    .flex {
+        flex-grow: 1;
+    }
+
+    .content__temp,
+    .content__wind {
+        display: flex;
+        margin: 1rem;
+    }
+}

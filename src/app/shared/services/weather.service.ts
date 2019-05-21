@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { ServiceSettings } from './service.settings';
-import { Weather } from '../models/weather';
+import { OpenWeather } from '../models/open-weather.';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-  public getWeather(id: number): Observable<Weather> {
-    return this.http.get<Weather>(ServiceSettings.getWeatherURL(id));
+  public getWeather(id: number): Observable<OpenWeather> {
+    return this.http.get<OpenWeather>(ServiceSettings.getWeatherURL(id));
   }
 }
