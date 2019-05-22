@@ -1,5 +1,4 @@
 import { Coordinates } from './coordinates';
-import { Weather } from './weather';
 
 export class City {
 

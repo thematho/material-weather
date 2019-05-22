@@ -12,7 +12,7 @@ import { OpenWeather } from '../models/open-weather.';
   providedIn: 'root'
 })
 export class CityWeatherService {
-  private citiesList: Array<City> = [mockData.cities[0], mockData.cities[1]];
+  private citiesList: Array<City> = mockData.cities;
   private baseURL = `api.openweathermap.org/data/2.5/weather?id=`;
 
   constructor(private weatherService: WeatherService) { }

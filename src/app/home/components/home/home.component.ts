@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
   }
 
   refreshWeather(id: number) {
-    console.log(id);
     this.citiesService.getCityWeather(id).subscribe(weather => {
       const index = this.citiesWeather.findIndex(c => c.id === id);
       if (~index) {
