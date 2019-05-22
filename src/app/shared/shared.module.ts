@@ -9,12 +9,10 @@ import {
   MatCardModule, MatDividerModule, MatProgressBarModule,
   MatButtonModule, MatIconModule, MatRippleModule
 } from '@angular/material';
-import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
     CityWeatherComponent,
-    SortPipe
   ],
   imports: [
     CommonModule,
