@@ -1,6 +1,10 @@
 :host {
     display: block;
 
+    mat-card-header {
+        align-items: baseline;
+    }
+
     .flex {
         flex-grow: 1;
     }
@@ -9,5 +13,21 @@
     .content__wind {
         display: flex;
         margin: 1rem;
+    }
+
+    .forecast {
+        padding: 1rem;
+
+        .forecast-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0;
+            list-style: none;
+            
+            .forecast-list__item {
+                margin: .5rem;
+            }
+        }
     }
 }

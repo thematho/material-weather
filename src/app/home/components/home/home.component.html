@@ -2,6 +2,7 @@
 <ul class="city-list">
   <app-city-weather [cityWeather]="weather"
                     *ngFor="let weather of citiesWeather"
-                    (click)="getWeather(weather.id)">
+                    (refresh)="refreshWeather($event)"
+                    (click)="getWeather(weather)">
   </app-city-weather>
 </ul>

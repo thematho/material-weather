@@ -1,18 +1,45 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>{{cityWeather.name}}</mat-card-title>
+    <span role="none"
+          class="flex"></span>
+    <button mat-icon-button
+            color="accent"
+            (click)="refreshWeather($event, cityWeather.id)">
+      <mat-icon aria-label="Refresh weather">refresh</mat-icon>
+    </button>
   </mat-card-header>
   <mat-card-content>
     <article>
-      <div class="content__temp" role="article">
+      <div class="content__temp"
+           role="article">
         <span role="heading">Current Temperature: {{cityWeather.main.temp}}° Celsius </span>
         <span role="heading"
               class="flex"></span>
         <span role="heading">AVG today: {{cityWeather.avgTemp}}°</span>
       </div>
-      <div class="content__wind" role="article">
-        Wind: {{cityWeather.wind.speed}} Km/hour - Direction: {{cityWeather.wind.deg}} Degrees
+      <div class="content__wind"
+           role="article">
+        Wind: {{cityWeather.wind.speed}} Km/hour
       </div>
     </article>
+    <mat-divider *ngIf="cityWeather.forecast">
+    </mat-divider>
+    <article  class= "forecast"*ngIf="cityWeather.show && cityWeather.forecast">
+      Forecast:
+      <ol class="forecast-list">
+        <li class="forecast-list__item"
+            *ngFor="let temp of cityWeather.forecast.list">
+          <div>
+            {{temp.dt_txt | date: 'HH:mm '}} hrs.
+          </div>
+          <div>
+            {{temp.main.temp}}° Degrees.
+          </div>
+        </li>
+      </ol>
+    </article>
+    <mat-progress-bar *ngIf="cityWeather.loading"
+                      mode="indeterminate"></mat-progress-bar>
   </mat-card-content>
 </mat-card>
