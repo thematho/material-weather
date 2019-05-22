@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [class.mat-elevation-z6]="focus">
   <mat-card-header>
     <mat-card-title>{{cityWeather.name}}</mat-card-title>
     <span role="none"
@@ -23,9 +23,10 @@
         Wind: {{cityWeather.wind.speed}} Km/hour
       </div>
     </article>
-    <mat-divider *ngIf="cityWeather.forecast">
+    <mat-divider *ngIf="cityWeather.show && cityWeather.forecast">
     </mat-divider>
-    <article  class= "forecast"*ngIf="cityWeather.show && cityWeather.forecast">
+    <article class="forecast"
+             *ngIf="cityWeather.show && cityWeather.forecast">
       Forecast:
       <ol class="forecast-list">
         <li class="forecast-list__item"
@@ -34,7 +35,7 @@
             {{temp.dt_txt | date: 'HH:mm '}} hrs.
           </div>
           <div>
-            {{temp.main.temp}}° Degrees.
+            {{temp.main.temp}}°
           </div>
         </li>
       </ol>

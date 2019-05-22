@@ -24,15 +24,17 @@ export class HomeComponent implements OnInit {
   }
 
   refreshWeather(id: number) {
-    this.citiesService.getCityWeather(id).subscribe(weather => {
-      const index = this.citiesWeather.findIndex(c => c.id === id);
-      if (~index) {
+    const index = this.citiesWeather.findIndex(c => c.id === id);
+    if (~index) {
+      this.citiesWeather[index].loading = true;
+      this.citiesService.getCityWeather(id).subscribe(weather => {
         this.citiesWeather[index] = Object.assign(this.citiesWeather[index], weather);
-      }
-    });
+        this.citiesWeather[index].loading = false;
+      });
+    }
 
   }
-  getWeather(weather) {
+  getWeather(weather: OpenWeather) {
     if (weather.show) {
       weather.show = false;
     } else {

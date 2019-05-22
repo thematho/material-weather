@@ -1,5 +1,6 @@
 :host {
     display: block;
+    cursor: pointer;
 
     mat-card-header {
         align-items: baseline;
@@ -27,6 +28,7 @@
             
             .forecast-list__item {
                 margin: .5rem;
+                text-align: right;
             }
         }
     }
