@@ -1,6 +1,7 @@
 export class ServiceSettings {
     private static BASE_URL = 'http://api.openweathermap.org/data/2.5/';
     private static METRIC_QUERY_PARAMS = '&units=metric';
+    private static FORECAST_QUERY_PARAMS = ServiceSettings.METRIC_QUERY_PARAMS + '&cnt=3';
 
     // TODO: This API KEY should be provided by a backend service endpoint, and
     // never submit access keys into the repo.
@@ -14,6 +15,6 @@ export class ServiceSettings {
     }
 
     static getForecastURL(id: number): any {
-        return `${this.BASE_URL}/forecast?id=${id}${this.METRIC_QUERY_PARAMS}&appid=${this.API_KEY}`
+        return `${this.BASE_URL}/forecast?id=${id}${this.FORECAST_QUERY_PARAMS}&appid=${this.API_KEY}`
     }
 }

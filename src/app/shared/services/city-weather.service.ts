@@ -14,9 +14,9 @@ import { OpenWeather } from '../models/open-weather.';
 export class CityWeatherService {
   private citiesList: Array<City> = [mockData.cities[0], mockData.cities[1]];
   private baseURL = `api.openweathermap.org/data/2.5/weather?id=`;
-  
+
   constructor(private weatherService: WeatherService) { }
-  
+
   /**
    * Emulates an Observable of HTTP request for a list of cities
    * Currently https://openweathermap.org does not provide a city API itself
@@ -30,7 +30,11 @@ export class CityWeatherService {
         concatMap(city => of(city).pipe(delay(Math.random() * 500)))
       )
       .pipe(
-        mergeMap(city=> this.weatherService.getWeather(city.id))
+        mergeMap(city => this.getCityWeather(city.id))
       );
+  }
+
+  public getCityWeather(id: number): Observable<OpenWeather> {
+    return this.weatherService.getWeather(id);
   }
 }
