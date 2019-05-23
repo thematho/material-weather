@@ -1,5 +1,5 @@
 export class ServiceSettings {
-    private static BASE_URL = 'http://api.openweathermap.org/data/2.5/';
+    private static BASE_URL = '//api.openweathermap.org/data/2.5/';
     private static METRIC_QUERY_PARAMS = '&units=metric';
     private static FORECAST_QUERY_PARAMS = ServiceSettings.METRIC_QUERY_PARAMS + '&cnt=3';
 
