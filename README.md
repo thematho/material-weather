@@ -24,7 +24,7 @@ We would prefer if you will deliver the code using BitBucket (private repo) but 
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start:dev` for a dev server. `http://localhost:4200/`.. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -33,6 +33,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Production server
+
+A basic Express server is provided, after you build the application you can run it using the following command on the command promt `npm start`.
+Then Navigate to `http://localhost:3000/`.
 
 ## Running unit tests
 
