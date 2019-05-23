@@ -12,7 +12,7 @@ export class CityWeatherComponent implements OnInit {
   @Input() cityWeather: OpenWeather;
   @Input() forecast: Forecast;
   @Output() refresh: EventEmitter<number> = new EventEmitter<number>();
-  private focus: boolean;
+  public focus: boolean;
 
   constructor(private weatherService: WeatherService) { }
 
