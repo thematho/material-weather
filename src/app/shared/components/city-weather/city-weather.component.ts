@@ -13,6 +13,7 @@ export class CityWeatherComponent implements OnInit {
   @Input() forecast: Forecast;
   @Output() refresh: EventEmitter<number> = new EventEmitter<number>();
   public focus: boolean;
+  public showDetails: boolean = false;
 
   constructor(private weatherService: WeatherService) { }
 
@@ -31,5 +32,8 @@ export class CityWeatherComponent implements OnInit {
   refreshWeather(event: Event, id: number) {
     this.refresh.emit(id);
     event.stopPropagation();
+  }
+  toggleVisibility(){
+    this.showDetails = !this.showDetails;
   }
 }

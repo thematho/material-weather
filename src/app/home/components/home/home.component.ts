@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CityWeatherService } from 'src/app/shared/services/city-weather.service';
 import { OpenWeather } from 'src/app/shared/models/open-weather.';
 import { ForecastService } from 'src/app/shared/services/forecast.service';
+import { CityWeatherComponent } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-home',
@@ -34,15 +35,15 @@ export class HomeComponent implements OnInit {
     }
 
   }
-  getWeather(weather: OpenWeather) {
-    if (weather.show) {
-      weather.show = false;
+  getWeather(weather: OpenWeather, component: CityWeatherComponent) {
+    if (component.showDetails) {
+      component.toggleVisibility();
     } else {
       weather.loading = true;
       this.forecastService.getWeather(weather.id)
-        .subscribe(forecast => {
-          weather.forecast = forecast;
-          weather.show = true;
+      .subscribe(forecast => {
+        weather.forecast = forecast;
+        component.toggleVisibility();
           weather.loading = false;
         });
     }
