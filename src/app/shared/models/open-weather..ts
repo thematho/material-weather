@@ -7,7 +7,6 @@ export class OpenWeather {
     public name: string;
     public main: Weather;
     public wind: Wind;
-    public loading: boolean = false;
     public forecast: Forecast = null;
 
     get avgTemp(): number {

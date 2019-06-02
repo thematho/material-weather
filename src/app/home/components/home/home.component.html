@@ -3,6 +3,6 @@
   <app-city-weather #cityComponent [cityWeather]="weather"
                     *ngFor="let weather of citiesWeather"
                     (refresh)="refreshWeather($event)"
-                    (click)="getWeather(weather, cityComponent)">
+                    (click)="getWeather(cityComponent)">
   </app-city-weather>
 </ul>

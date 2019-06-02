@@ -7,7 +7,7 @@
             color="primary"
             matTooltip="Refresh City and weather information."
             aria-label="Click to refresh weather information for this city."
-            (click)="refreshWeather($event, cityWeather.id)">
+            (click)="refreshWeather($event)">
       <mat-icon aria-label="Refresh weather">refresh</mat-icon>
     </button>
   </mat-card-header>
@@ -42,7 +42,7 @@
         </li>
       </ol>
     </article>
-    <mat-progress-bar *ngIf="cityWeather.loading"
+    <mat-progress-bar *ngIf="loading"
                       mode="indeterminate"></mat-progress-bar>
   </mat-card-content>
 </mat-card>

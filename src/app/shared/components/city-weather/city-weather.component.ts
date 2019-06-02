@@ -11,9 +11,10 @@ import { Forecast } from '../../models/forecast';
 export class CityWeatherComponent implements OnInit {
   @Input() cityWeather: OpenWeather;
   @Input() forecast: Forecast;
-  @Output() refresh: EventEmitter<number> = new EventEmitter<number>();
+  @Output() refresh: EventEmitter<CityWeatherComponent> = new EventEmitter<CityWeatherComponent>();
   public focus: boolean;
   public showDetails: boolean = false;
+  loading: boolean;
 
   constructor(private weatherService: WeatherService) { }
 
@@ -29,8 +30,8 @@ export class CityWeatherComponent implements OnInit {
   onMouseLeave() {
     this.focus = false;
   }
-  refreshWeather(event: Event, id: number) {
-    this.refresh.emit(id);
+  refreshWeather(event: Event) {
+    this.refresh.emit(this);
     event.stopPropagation();
   }
   toggleVisibility(){

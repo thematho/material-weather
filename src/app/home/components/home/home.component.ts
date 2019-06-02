@@ -24,27 +24,23 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  refreshWeather(id: number) {
-    const index = this.citiesWeather.findIndex(c => c.id === id);
-    if (~index) {
-      this.citiesWeather[index].loading = true;
-      this.citiesService.getCityWeather(id).subscribe(weather => {
-        this.citiesWeather[index] = Object.assign(this.citiesWeather[index], weather);
-        this.citiesWeather[index].loading = false;
-      });
-    }
-
+  refreshWeather(component: CityWeatherComponent) {
+    component.loading = true;
+    this.citiesService.getCityWeather(component.cityWeather.id).subscribe(weather => {
+      component.cityWeather = Object.assign(component.cityWeather, weather);
+      component.loading = false;
+    });
   }
-  getWeather(weather: OpenWeather, component: CityWeatherComponent) {
+  getWeather(component: CityWeatherComponent) {
     if (component.showDetails) {
       component.toggleVisibility();
     } else {
-      weather.loading = true;
-      this.forecastService.getWeather(weather.id)
-      .subscribe(forecast => {
-        weather.forecast = forecast;
-        component.toggleVisibility();
-          weather.loading = false;
+      component.loading = true;
+      this.forecastService.getWeather(component.cityWeather.id)
+        .subscribe(forecast => {
+          component.cityWeather.forecast = forecast;
+          component.toggleVisibility();
+          component.loading = false;
         });
     }
   }
