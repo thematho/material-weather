@@ -1,5 +1,5 @@
 import { OpenWeather } from './open-weather.';
 
-export class Forecast {
-    public list: Array<OpenWeather>;
+export interface Forecast {
+    list: Array<OpenWeather>;
 }
